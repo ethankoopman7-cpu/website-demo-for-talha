@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Talha Take Aways in Cravenby, Cape Town. Burgers, Gatsby's, chips, chicken, toasted sandwiches and more.">
+  <title>Talha Take Aways | Cravenby, Cape Town</title>
+  <style>
+    :root{--orange:#f47721;--yellow:#ffc928;--black:#111;--cream:#fff8eb;--muted:#6c655b;--red:#d92732}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--black);background:#fff}
+    a{color:inherit}
+    .topline{background:var(--yellow);text-align:center;padding:9px 16px;font-size:.86rem;font-weight:800;letter-spacing:.03em}
+    header{background:#111;color:white;position:sticky;top:0;z-index:10;border-bottom:3px solid var(--orange)}
+    .nav{max-width:1160px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 22px}
+    .logo{display:block;width:min(290px,55vw);height:auto}
+    nav{display:flex;align-items:center;gap:22px}
+    nav a{text-decoration:none;font-size:.93rem;font-weight:700;color:#fff}
+    nav a:hover{color:var(--yellow)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:0;border-radius:7px;padding:13px 18px;font-weight:800;cursor:pointer;transition:transform .15s,filter .15s}
+    .nav-cta,.btn-primary{background:var(--yellow);color:#111}
+    .btn-dark{background:#111;color:white}
+    .btn-outline{border:2px solid #111;color:#111;background:transparent}
+    .btn:hover,.nav-cta:hover{transform:translateY(-2px);filter:brightness(1.03)}
+    .hero{background:linear-gradient(115deg,#fff6df 0%,#fff 55%,#ffe4bd 100%);overflow:hidden}
+    .hero-inner{max-width:1160px;margin:auto;padding:68px 22px 64px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+    .eyebrow{display:inline-block;background:#111;color:var(--yellow);padding:8px 12px;border-radius:4px;font-size:.78rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    h1{font-size:clamp(2.7rem,6vw,5.4rem);line-height:.98;letter-spacing:-.055em;margin:19px 0}
+    h1 span{color:var(--orange)}
+    .hero p{font-size:1.12rem;line-height:1.7;color:#4e4942;max-width:550px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+    .small-note{font-size:.85rem!important;color:#6c655b!important;margin-top:16px}
+    .hero-art{min-height:360px;border-radius:22px;background:#171717;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:12px 12px 0 var(--yellow)}
+    .hero-art:before,.hero-art:after{content:"";position:absolute;border-radius:50%;border:2px solid rgba(255,201,40,.32)}
+    .hero-art:before{width:320px;height:320px}
+    .hero-art:after{width:245px;height:245px}
+    .food-emoji{position:relative;z-index:1;font-size:clamp(6rem,14vw,10rem);filter:drop-shadow(0 12px 7px #0008);transform:rotate(-7deg)}
+    .burst{position:absolute;right:18px;top:22px;background:var(--red);color:#fff;font-weight:900;text-align:center;padding:15px 12px;border-radius:50%;width:96px;height:96px;display:grid;place-content:center;transform:rotate(9deg);font-size:.83rem;line-height:1.15}
+    .stripe{height:9px;background:repeating-linear-gradient(135deg,var(--yellow) 0 18px,#111 18px 36px)}
+    section{padding:70px 22px}
+    .section-inner{max-width:1160px;margin:auto}
+    .section-head{text-align:center;max-width:680px;margin:0 auto 35px}
+    .section-head .kicker{font-weight:900;text-transform:uppercase;letter-spacing:.13em;color:var(--orange);font-size:.78rem}
+    h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.04em;margin:10px 0 12px}
+    .section-head p{line-height:1.65;color:var(--muted);margin:0}
+    .menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .menu-card{border:1px solid #eee0ce;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 5px 18px #21130008}
+    .menu-photo{height:155px;display:grid;place-items:center;background:linear-gradient(135deg,#fff0c4,#ffd88a);font-size:4.4rem;position:relative}
+    .menu-photo:after{content:"PHOTO COMING SOON";position:absolute;bottom:10px;left:10px;background:#111;color:#fff;padding:5px 7px;border-radius:3px;font-size:.57rem;letter-spacing:.08em;font-weight:800}
+    .menu-info{padding:17px}
+    .menu-info h3{margin:0 0 8px;font-size:1.08rem}
+    .menu-info p{font-size:.9rem;line-height:1.5;color:var(--muted);margin:0}
+    .menu-callout{margin-top:28px;padding:20px;border-radius:12px;background:var(--cream);display:flex;justify-content:space-between;align-items:center;gap:18px}
+    .menu-callout p{margin:0;line-height:1.5}
+    .about{background:#111;color:white}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+    .about-mark{min-height:260px;border:2px solid var(--orange);border-radius:18px;background:linear-gradient(135deg,#202020,#090909);display:grid;place-items:center;padding:25px}
+    .about-mark img{width:100%;max-width:440px;height:auto}
+    .about h2{color:white}
+    .about p{color:#ded7ce;line-height:1.8}
+    .about .kicker{color:var(--yellow);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem}
+    .perks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}
+    .perk{border-left:3px solid var(--yellow);padding:8px 12px}
+    .perk strong{display:block;color:var(--yellow);margin-bottom:5px}
+    .perk span{font-size:.86rem;color:#ddd}
+    .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .info-card{border:1px solid #eee0ce;border-radius:14px;padding:25px;background:#fff}
+    .info-card h3{margin:0 0 17px;font-size:1.3rem}
+    .info-row{display:flex;gap:12px;margin:15px 0;line-height:1.5}
+    .info-icon{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;border-radius:9px;background:#fff0c4}
+    .info-row strong{display:block;margin-bottom:3px}
+    .muted{color:var(--muted);font-size:.92rem}
+    .hours{width:100%;border-collapse:collapse;margin-top:8px}
+    .hours td{padding:10px 0;border-bottom:1px solid #f0e6d9;font-size:.94rem}
+    .hours td:last-child{text-align:right;font-weight:700}
+    .reviews{background:var(--cream)}
+    .review-placeholder{max-width:760px;margin:auto;border:2px dashed #e4c58e;border-radius:14px;padding:28px;text-align:center;background:#fff}
+    .review-placeholder .stars{font-size:1.5rem;color:#d8a000;letter-spacing:.12em}
+    .review-placeholder p{line-height:1.6;color:var(--muted)}
+    .contact-band{background:var(--orange);padding:36px 22px}
+    .contact-inner{max-width:1160px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .contact-inner h2{font-size:clamp(1.6rem,3vw,2.4rem);margin:0 0 8px}
+    .contact-inner p{margin:0;line-height:1.5}
+    footer{background:#111;color:#fff;padding:30px 22px}
+    .footer-inner{max-width:1160px;margin:auto;display:flex;justify-content:space-between;gap:22px;align-items:center}
+    .footer-inner img{width:210px;max-width:45vw}
+    footer p{font-size:.85rem;color:#cfc8bf;line-height:1.6}
+    .footer-links{display:flex;flex-wrap:wrap;gap:15px}
+    .footer-links a{font-size:.86rem;text-decoration:none;color:#fff}
+    .notice{max-width:1160px;margin:0 auto;padding:0 22px 20px;background:#111;color:#aaa;font-size:.75rem}
+    @media(max-width:850px){nav{gap:12px}nav a:not(.nav-cta){display:none}.hero-inner{grid-template-columns:1fr;padding-top:45px}.hero-art{min-height:260px}.menu-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr;gap:28px}.visit-grid{grid-template-columns:1fr}.contact-inner{align-items:flex-start;flex-direction:column}.perks{grid-template-columns:1fr}}
+    @media(max-width:480px){.nav{padding:10px 16px}.logo{width:220px}.nav-cta{padding:10px 12px;font-size:.85rem}.hero-inner{padding:42px 18px}.hero-art{min-height:230px}.menu-grid{gap:10px}.menu-photo{height:120px;font-size:3.5rem}.menu-info{padding:12px}.menu-info h3{font-size:.98rem}.menu-info p{font-size:.82rem}section{padding:52px 18px}.menu-callout{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="topline">GOOD FOOD • GREAT VALUE • CRAVENBY, CAPE TOWN</div>
+  <header>
+    <div class="nav">
+      <a href="#home" aria-label="Talha Take Aways home"><img class="logo" alt="Talha Take Aways logo" src="talha-logo.png"></a>
+      <nav aria-label="Main navigation">
+        <a href="#menu">Our Menu</a>
+        <a href="#about">About Us</a>
+        <a href="#visit">Find Us</a>
+        <a class="nav-cta" href="https://wa.me/27730559933?text=Hi%20Talha%20Take%20Aways%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">WhatsApp Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Your local takeaway</span>
+          <h1>Big cravings.<br><span>Good food.</span><br>Sorted.</h1>
+          <p>From satisfying burgers and loaded Gatsby's to golden chips and tasty toasted sandwiches, find your takeaway favourites right here in Cravenby.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#menu">Explore the menu</a>
+            <a class="btn btn-dark" href="https://wa.me/27730559933?text=Hi%20Talha%20Take%20Aways%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener">Message us</a>
+          </div>
+          <p class="small-note">Collection and delivery available. Contact us to confirm delivery areas and fees.</p>
+        </div>
+        <div class="hero-art" aria-label="Food photo placeholder">
+          <div class="burst">MADE FOR<br>YOUR<br>CRAVINGS</div>
+          <div class="food-emoji" aria-hidden="true">🍔🍟</div>
+        </div>
+      </div>
+    </section>
+    <div class="stripe"></div>
+
+    <section id="menu">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="kicker">Something for everyone</div>
+          <h2>What's on the menu?</h2>
+          <p>Take a look at what we serve. Our full menu and prices will be added as soon as the menu photo is supplied.</p>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-card"><div class="menu-photo" aria-label="Burger photo placeholder">🍔</div><div class="menu-info"><h3>Burgers</h3><p>A takeaway classic for when hunger calls.</p></div></article>
+          <article class="menu-card"><div class="menu-photo" aria-label="Chips photo placeholder">🍟</div><div class="menu-info"><h3>Chips</h3><p>A favourite side or a snack all on its own.</p></div></article>
+          <article class="menu-card"><div class="menu-photo" aria-label="Gatsby photo placeholder">🥖</div><div class="menu-info"><h3>Gatsby's</h3><p>A Cape Town favourite made for sharing.</p></div></article>
+          <article class="menu-card"><div class="menu-photo" aria-label="Chicken photo placeholder">🍗</div><div class="menu-info"><h3>Chicken</h3><p>Something tasty for chicken lovers.</p></div></article>
+          <article class="menu-card"><div class="menu-photo" aria-label="Toasted sandwich photo placeholder">🥪</div><div class="menu-info"><h3>Toasted Sandwiches</h3><p>Warm, toasty comfort for any time of day.</p></div></article>
+          <article class="menu-card"><div class="menu-photo" aria-label="Russian sausage photo placeholder">🌭</div><div class="menu-info"><h3>Russian Sausages</h3><p>A hearty takeaway favourite.</p></div></article>
+          <article class="menu-card"><div class="menu-photo" aria-label="Steak photo placeholder">🥩</div><div class="menu-info"><h3>Steak</h3><p>A satisfying option for a bigger appetite.</p></div></article>
+          <article class="menu-card"><div class="menu-photo" aria-label="Cold drinks photo placeholder">🥤</div><div class="menu-info"><h3>Cold Drinks</h3><p>Grab a refreshing drink with your meal.</p></div></article>
+        </div>
+        <div class="menu-callout">
+          <p><strong>Looking for a specific item or price?</strong><br><span class="muted">Contact us and we'll help you confirm what's available.</span></p>
+          <a class="btn btn-primary" href="https://wa.me/27730559933?text=Hi%20Talha%20Take%20Aways%2C%20could%20you%20please%20send%20me%20your%20menu%20and%20prices%3F" target="_blank" rel="noopener">Ask for the menu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="section-inner about-grid">
+        <div class="about-mark"><img src="talha-logo.png" alt="Talha Take Aways logo"></div>
+        <div>
+          <div class="kicker">A neighbourhood favourite</div>
+          <h2>Welcome to Talha Take Aways</h2>
+          <p>We're a local takeaway in Cravenby, Cape Town, serving a range of familiar takeaway favourites. Whether you're after a burger, Gatsby, chips, chicken or a cold drink, we're here to make choosing your next meal simple.</p>
+          <p>Visit us for collection or contact us to ask about delivery to your area. We look forward to serving you.</p>
+          <div class="perks">
+            <div class="perk"><strong>Local & welcoming</strong><span>Based in Cravenby</span></div>
+            <div class="perk"><strong>Easy to reach</strong><span>Contact us by WhatsApp</span></div>
+            <div class="perk"><strong>Flexible options</strong><span>Collection or delivery enquiry</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="kicker">From our customers</div>
+          <h2>Reviews coming soon</h2>
+          <p>We want this space to feature genuine feedback from Talha Take Aways customers.</p>
+        </div>
+        <div class="review-placeholder">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <strong>Your feedback could be featured here.</strong>
+          <p>Have you ordered from us? Send us your feedback and, with your permission, it may be added to this section.</p>
+          <a class="btn btn-dark" href="https://wa.me/27730559933?text=Hi%20Talha%20Take%20Aways%2C%20I%27d%20like%20to%20share%20feedback." target="_blank" rel="noopener">Share feedback</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="section-inner">
+        <div class="section-head">
+          <div class="kicker">Come through</div>
+          <h2>Find Talha Take Aways</h2>
+          <p>Visit us in Cravenby or get in touch before placing an order.</p>
+        </div>
+        <div class="visit-grid">
+          <div class="info-card">
+            <h3>Contact & location</h3>
+            <div class="info-row"><div class="info-icon">📍</div><div><strong>Our address</strong><span class="muted">234a Connaught Rd, Cravenby, Cape Town, 7493</span></div></div>
+            <div class="info-row"><div class="info-icon">💬</div><div><strong>WhatsApp</strong><a href="https://wa.me/27730559933" target="_blank" rel="noopener">+27 73 055 9933</a><div class="muted">Message us for enquiries and delivery details.</div></div></div>
+            <div class="info-row"><div class="info-icon">☎️</div><div><strong>Phone orders</strong><span class="muted">Call number to be confirmed.</span></div></div>
+            <div class="info-row"><div class="info-icon">💳</div><div><strong>Payment</strong><span class="muted">Cash and EFT accepted.</span></div></div>
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=234a+Connaught+Rd%2C+Cravenby%2C+Cape+Town%2C+7493" target="_blank" rel="noopener">Get directions</a>
+          </div>
+          <div class="info-card">
+            <h3>Opening hours</h3>
+            <table class="hours" aria-label="Opening hours">
+              <tr><td>Monday</td><td>10:00 – 21:30</td></tr>
+              <tr><td>Tuesday</td><td>10:00 – 21:30</td></tr>
+              <tr><td>Wednesday</td><td>10:00 – 21:30</td></tr>
+              <tr><td>Thursday</td><td>10:00 – 21:30</td></tr>
+              <tr><td>Friday</td><td>10:00 – 21:30</td></tr>
+              <tr><td>Saturday</td><td>10:00 – 21:30</td></tr>
+              <tr><td>Sunday</td><td>10:00 – 18:30</td></tr>
+            </table>
+            <p class="muted">Delivery areas and fees vary. Please contact us to confirm availability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact-band">
+      <div class="contact-inner">
+        <div><h2>Hungry? Let's talk.</h2><p>Questions about the menu, collection or delivery? Send us a message.</p></div>
+        <a class="btn btn-dark" href="https://wa.me/27730559933?text=Hi%20Talha%20Take%20Aways%21" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div><img src="talha-logo.png" alt="Talha Take Aways logo"><p>234a Connaught Rd, Cravenby, Cape Town, 7493</p></div>
+      <div class="footer-links"><a href="#menu">Menu</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#visit">Find Us</a><a href="https://wa.me/27730559933" target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+  </footer>
+  <div class="notice">Menu items and prices will be updated from the official menu. Customer reviews will be published only when genuine reviews are provided. Phone number for calls still to be confirmed.</div>
+</body>
+</html>
